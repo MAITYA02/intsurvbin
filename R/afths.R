@@ -242,7 +242,10 @@ afths <- function(ct, X, method.tau = c("fixed", "truncatedCauchy","halfCauchy")
   
   
   
-  ## start Gibb's sampling ##
+  ## start Gibbs sampling ##
+  
+  message("Markov chain monte carlo is running")
+  
   for(i in 1:niter)
   {
     
@@ -398,7 +401,7 @@ afths <- function(ct, X, method.tau = c("fixed", "truncatedCauchy","halfCauchy")
     
     if (i%%500 == 0)
     {
-      print(i)
+      message("iteration = ", i)
     }
     
     

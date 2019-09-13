@@ -363,7 +363,9 @@ aftprobiths <- function(ct, z, X, burn = 1000, nmc = 5000, thin = 1, alpha = 0.0
   
   
   
-  ## start Gibb's sampling ##
+  ## start Gibbs sampling ##
+  
+  message("Markov chain monte carlo is running")
   
   for(i in 1:niter)
     
@@ -649,7 +651,7 @@ aftprobiths <- function(ct, z, X, burn = 1000, nmc = 5000, thin = 1, alpha = 0.0
       
     {
       
-      print(i)
+      message("iteration = ", i)
       
     }
     
