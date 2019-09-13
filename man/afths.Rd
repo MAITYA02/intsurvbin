@@ -98,7 +98,6 @@ Sigma[j, j] <- 1
 
 x <- mvtnorm::rmvnorm(n, mean = rep(0, p), sigma = Sigma)    # correlated design matrix
 
-zmean <- x \%*\% beta.t
 tmean <- x \%*\% beta.t
 yCorr <- 0.5
 yCov <- matrix(c(1, yCorr, yCorr, 1), nrow = 2)
@@ -106,10 +105,8 @@ yCov <- matrix(c(1, yCorr, yCorr, 1), nrow = 2)
 
 y <- mvtnorm::rmvnorm(n, sigma = yCov)
 t <- y[, 1] + tmean
-z <- ifelse((y[, 2] + zmean) > 0, 1, 0)
 X <- scale(as.matrix(x))  # standarization
 
-z <- as.numeric(as.matrix(c(z)))
 t <- as.numeric(as.matrix(c(t)))
 T <- exp(t)   # AFT model
 C <- rgamma(n, shape = 1.75, scale = 3)   # 42\% censoring time
@@ -119,12 +116,10 @@ ct <- as.matrix(cbind(time = time, status = status))  # censored time
 
 
 # Training set
-ztrain <- z[1:ntrain]
 cttrain <- ct[1:ntrain, ]
 Xtrain  <- X[1:ntrain, ]
 
 # Test set
-ztest <- z[(ntrain + 1):n]
 cttest <- ct[(ntrain + 1):n, ]
 Xtest  <- X[(ntrain + 1):n, ]
 
