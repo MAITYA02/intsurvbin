@@ -8,8 +8,8 @@ Authors@R:
       person("Raymond", "Carroll", email = "carroll@stat.tamu.edu", role = "aut"),
       person("Bani", "K. Mallick", email = "bmallick@stat.tamu.edu", role = "aut"))
 Description: Function to implement the horseshoe shrinkage prior in 
-             integrated survival and binary regression as developed in Maity et al (2019)
-             <DOI:10.1111/rssc.12377>.
+             integrated survival and binary regression as developed in Maity et. al. (2019) 
+             <doi:10.1111/rssc.12377>.
 Depends: R (>= 2.1.1)
 Imports: msm, stats, tmvtnorm, mvtnorm, MHadaptive, mgcv
 Suggests: smoothmest

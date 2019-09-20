@@ -108,7 +108,7 @@
 #' @examples
 
 #' burnin <- 500
-#' nmc    <- 1500
+#' nmc    <- 500
 #' thin <- 1
 #' y.sd   <- 1  # standard deviation of the response
 #' 
